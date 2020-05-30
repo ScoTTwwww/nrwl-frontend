@@ -1,0 +1,22 @@
+version: '3.5'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: angular:8.0.0
+    container_name: frontend
+    command: npm run start
+    restart: always
+    environment:
+      NODE_ENV: development
+    ports:
+      - 4200:4200
+      - 4000:4000
+    volumes:
+      - .:/opt/app
+
+networks:
+  default:
+    name: frontend_network
