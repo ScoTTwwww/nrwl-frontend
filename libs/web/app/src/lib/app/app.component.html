@@ -1,0 +1,26 @@
+<mat-sidenav-container fullscreen>
+
+  <mat-sidenav #sideNav mode="over" fixedInViewport="true" fixedTopGap="0" fixedBottomGap="20" position="end">
+    我是左邊選單
+  </mat-sidenav>
+
+  <mat-sidenav-content fxLayout="column">
+
+    <mat-toolbar color="primary">
+      <!-- top navigation buttons -->
+      <button mat-button (click)="sideNav.toggle()">切換左邊選單狀態</button>
+    </mat-toolbar>
+
+    <router-outlet>
+      <!-- content change by changing the route -->
+    </router-outlet>
+
+    <footer fxFlexOffset="auto">
+
+      <p>Test footer</p>
+
+    </footer>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
