@@ -22,10 +22,7 @@
             "main": "apps/web/src/main.ts",
             "polyfills": "apps/web/src/polyfills.ts",
             "tsConfig": "apps/web/tsconfig.app.json",
-            "assets": [
-              "apps/web/src/favicon.ico",
-              "apps/web/src/assets"
-            ],
+            "assets": ["apps/web/src/favicon.ico", "apps/web/src/assets"],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "apps/web/src/styles.scss"
@@ -83,9 +80,7 @@
               "apps/web/tsconfig.app.json",
               "apps/web/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**"
-            ]
+            "exclude": ["**/node_modules/**"]
           }
         },
         "test": {
@@ -121,6 +116,254 @@
           "options": {
             "tsConfig": "apps/web-e2e/tsconfig.e2e.json"
           }
+        }
+      }
+    },
+    "common-shared": {
+      "projectType": "library",
+      "root": "libs/common/shared",
+      "sourceRoot": "libs/common/shared/src",
+      "prefix": "common",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/shared/tsconfig.lib.json",
+              "libs/common/shared/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/shared/jest.config.js",
+            "tsConfig": "libs/common/shared/tsconfig.spec.json",
+            "setupFile": "libs/common/shared/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "web-shared": {
+      "projectType": "library",
+      "root": "libs/web/shared",
+      "sourceRoot": "libs/web/shared/src",
+      "prefix": "web",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/web/shared/tsconfig.lib.json",
+              "libs/web/shared/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/web/shared/jest.config.js",
+            "tsConfig": "libs/web/shared/tsconfig.spec.json",
+            "setupFile": "libs/web/shared/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ionic-shared": {
+      "projectType": "library",
+      "root": "libs/ionic/shared",
+      "sourceRoot": "libs/ionic/shared/src",
+      "prefix": "ionic",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ionic/shared/tsconfig.lib.json",
+              "libs/ionic/shared/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ionic/shared/jest.config.js",
+            "tsConfig": "libs/ionic/shared/tsconfig.spec.json",
+            "setupFile": "libs/ionic/shared/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "web-core": {
+      "projectType": "library",
+      "root": "libs/web/core",
+      "sourceRoot": "libs/web/core/src",
+      "prefix": "web",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/web/core/tsconfig.lib.json",
+              "libs/web/core/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/web/core/jest.config.js",
+            "tsConfig": "libs/web/core/tsconfig.spec.json",
+            "setupFile": "libs/web/core/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ionic-core": {
+      "projectType": "library",
+      "root": "libs/ionic/core",
+      "sourceRoot": "libs/ionic/core/src",
+      "prefix": "ionic",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ionic/core/tsconfig.lib.json",
+              "libs/ionic/core/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ionic/core/jest.config.js",
+            "tsConfig": "libs/ionic/core/tsconfig.spec.json",
+            "setupFile": "libs/ionic/core/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "ionic-app": {
+      "projectType": "library",
+      "root": "libs/ionic/app",
+      "sourceRoot": "libs/ionic/app/src",
+      "prefix": "ionic",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ionic/app/tsconfig.lib.json",
+              "libs/ionic/app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ionic/app/jest.config.js",
+            "tsConfig": "libs/ionic/app/tsconfig.spec.json",
+            "setupFile": "libs/ionic/app/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "web-app": {
+      "projectType": "library",
+      "root": "libs/web/app",
+      "sourceRoot": "libs/web/app/src",
+      "prefix": "web",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/web/app/tsconfig.lib.json",
+              "libs/web/app/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/web/app/jest.config.js",
+            "tsConfig": "libs/web/app/tsconfig.spec.json",
+            "setupFile": "libs/web/app/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "common-core": {
+      "projectType": "library",
+      "root": "libs/common/core",
+      "sourceRoot": "libs/common/core/src",
+      "prefix": "common",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/core/tsconfig.lib.json",
+              "libs/common/core/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/core/jest.config.js",
+            "tsConfig": "libs/common/core/tsconfig.spec.json",
+            "setupFile": "libs/common/core/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
         }
       }
     }

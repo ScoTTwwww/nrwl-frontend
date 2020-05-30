@@ -13,6 +13,30 @@
     },
     "web": {
       "tags": []
+    },
+    "common-shared": {
+      "tags": []
+    },
+    "web-shared": {
+      "tags": []
+    },
+    "ionic-shared": {
+      "tags": []
+    },
+    "web-core": {
+      "tags": []
+    },
+    "ionic-core": {
+      "tags": []
+    },
+    "ionic-app": {
+      "tags": []
+    },
+    "web-app": {
+      "tags": []
+    },
+    "common-core": {
+      "tags": []
     }
   }
 }

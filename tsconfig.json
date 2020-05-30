@@ -15,7 +15,16 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@frontend/common/shared": ["libs/common/shared/src/index.ts"],
+      "@frontend/web/shared": ["libs/web/shared/src/index.ts"],
+      "@frontend/ionic/shared": ["libs/ionic/shared/src/index.ts"],
+      "@frontend/web/core": ["libs/web/core/src/index.ts"],
+      "@frontend/ionic/core": ["libs/ionic/core/src/index.ts"],
+      "@frontend/ionic/app": ["libs/ionic/app/src/index.ts"],
+      "@frontend/web/app": ["libs/web/app/src/index.ts"],
+      "@frontend/common/core": ["libs/common/core/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
