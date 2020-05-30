@@ -43,6 +43,9 @@
     },
     "ionic": {
       "tags": []
+    },
+    "common-material": {
+      "tags": []
     }
   }
 }
