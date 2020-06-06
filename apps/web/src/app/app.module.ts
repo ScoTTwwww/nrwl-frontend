@@ -10,6 +10,7 @@ import { HttpClient, HttpClientModule } from "@angular/common/http";
 import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { CommonSharedModule } from '@frontend/common/shared';
+import { WebCoreModule } from '@frontend/web/core';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -26,6 +27,7 @@ const routes: Routes = [
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    WebCoreModule,
     CommonSharedModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot({

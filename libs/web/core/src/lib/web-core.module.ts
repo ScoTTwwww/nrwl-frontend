@@ -1,7 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CommonCoreModule } from '@frontend/common/core';
 
 @NgModule({
-  imports: [CommonModule]
+  imports: [
+    CommonModule,
+    CommonCoreModule
+  ]
 })
 export class WebCoreModule {}

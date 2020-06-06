@@ -1,3 +1,3 @@
-<div  class="custom-theme-1" fxLayout="column" fxFlexFill>
+<div  class="{{ themeService.theme$ | async }}" fxLayout="column" fxFlexFill>
   <router-outlet class="router-flex"></router-outlet>
 </div>

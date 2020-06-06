@@ -2,6 +2,31 @@
 @import '~normalize.css';
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';
 
+
+@import '~@angular/material/theming';
+
+@include mat-core();
+
+@import './themes/theme-1.theme';
+@import './themes/theme-2.theme';
+@import './themes/theme-3.theme';
+
+.theme-1 {
+  @include angular-material-theme($anms-light-theme);
+  //@include custom-components-theme($anms-light-theme);
+}
+
+.theme-2 {
+  @include angular-material-theme($anms-black-theme);
+  //@include custom-components-theme($anms-black-theme);
+}
+
+.theme-3 {
+  @include angular-material-theme($anms-theme);
+  //@include custom-components-theme($anms-theme);
+}
+
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
