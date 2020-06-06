@@ -24,7 +24,8 @@
       "@frontend/ionic/app": ["libs/ionic/app/src/index.ts"],
       "@frontend/web/app": ["libs/web/app/src/index.ts"],
       "@frontend/common/core": ["libs/common/core/src/index.ts"],
-      "@frontend/common/material": ["libs/common/material/src/index.ts"]
+      "@frontend/common/material": ["libs/common/material/src/index.ts"],
+      "@frontend/common/auth/shared": ["libs/common/auth/shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
