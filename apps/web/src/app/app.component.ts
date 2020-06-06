@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ThemeService } from '@frontend/web/shared';
-import { ConfigService } from '@frontend/common/shared';
+import { ConfigService, LanguageService } from '@frontend/common/shared';
 
 @Component({
   selector: 'frontend-root',
@@ -12,13 +12,15 @@ export class AppComponent implements OnInit {
 
   constructor(
     public themeService: ThemeService,
-    public configService: ConfigService
+    public configService: ConfigService,
+    private languageService: LanguageService
   ) {
   }
 
   ngOnInit(): void {
     this.themeService.setTheme("theme-3");
     this.configService.loadConfig();
+    this.languageService.init();
   }
 
 }

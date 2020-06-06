@@ -1,6 +1,18 @@
 {
   "theme": {
-    "list": [ "theme-1", "theme-2", "theme-3"],
+    "list": [
+      "theme-1",
+      "theme-2",
+      "theme-3"
+    ],
     "default": "theme-1"
+  },
+  "language": {
+    "list": [
+      "cn",
+      "en",
+      "tw"
+    ],
+    "default": "tw"
   }
 }

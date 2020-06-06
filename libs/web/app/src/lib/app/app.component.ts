@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfigService } from '@frontend/common/shared';
+import { ConfigService, LanguageService } from '@frontend/common/shared';
 import { ThemeService } from '@frontend/web/shared';
 import { MatRadioChange } from '@angular/material';
 
@@ -13,7 +13,8 @@ export class AppComponent implements OnInit {
 
   constructor(
     public configService: ConfigService,
-    public themeService: ThemeService
+    public themeService: ThemeService,
+    public languageService: LanguageService
   ) {
   }
 
