@@ -24,7 +24,7 @@ export class ConfigService {
 
   loadConfig() {
     this.httpClient.get('assets/config.json').subscribe(config => {
-      console.log("--- Loading Finish config ---")
+      console.log("--- Loading Finish config ---", config)
       this._config = config;
       this.configSubject.next(config);
     })

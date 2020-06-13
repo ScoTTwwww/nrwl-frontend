@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CommonSharedModule } from '@frontend/common/shared';
 import { AppComponent } from './app/app.component';
 import { Routes, RouterModule } from '@angular/router';
-
+import { TranslateModule } from '@ngx-translate/core';
 const routes: Routes = [
   {
     path: '',
@@ -15,6 +15,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     CommonSharedModule,
+    TranslateModule,
     RouterModule.forChild(routes)
   ],
   declarations: [AppComponent]

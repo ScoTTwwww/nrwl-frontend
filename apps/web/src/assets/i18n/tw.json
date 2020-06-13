@@ -1,6 +1,8 @@
 {
-  "HOME": {
-    "TITLE": "Title",
-    "WELCOME": "Welcome, {{name}}"
+  "theme": {
+    "title": "皮膚設定",
+    "theme-1": "皮膚1",
+    "theme-2": "皮膚2",
+    "theme-3": "皮膚3"
   }
 }

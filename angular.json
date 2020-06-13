@@ -606,6 +606,37 @@
           "styleext": "scss"
         }
       }
+    },
+    "common-auth-state": {
+      "projectType": "library",
+      "root": "libs/common/auth/state",
+      "sourceRoot": "libs/common/auth/state/src",
+      "prefix": "common-auth",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/auth/state/tsconfig.lib.json",
+              "libs/common/auth/state/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/auth/state/jest.config.js",
+            "tsConfig": "libs/common/auth/state/tsconfig.spec.json",
+            "setupFile": "libs/common/auth/state/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
     }
   },
   "cli": {

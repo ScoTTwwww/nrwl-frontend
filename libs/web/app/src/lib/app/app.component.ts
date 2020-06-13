@@ -9,7 +9,7 @@ import { MatRadioChange } from '@angular/material';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  favoriteSeason: any = this.themeService._theme;
+
 
   constructor(
     public configService: ConfigService,
@@ -21,8 +21,4 @@ export class AppComponent implements OnInit {
   ngOnInit() {
   }
 
-  radioChange(event: MatRadioChange) {
-    const theme = event.value;
-    this.themeService.setTheme(theme);
-  }
 }

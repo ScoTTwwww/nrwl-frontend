@@ -1,17 +1,26 @@
 <mat-sidenav-container fullscreen  [hasBackdrop]="true" autosize>
   <mat-sidenav #sideNav mode="over" fixedInViewport="true" fixedTopGap="0" position="end" [autoFocus]="false">
     <div class="group" fxLayout="column" fxLayoutAlign="space-around center">
-      <!-- <button (click)="sideNav.close()"></button> -->
-      <h2>Color themes</h2>
-      <mat-radio-group aria-labelledby="example-radio-group-label" class="theme-radio-group" [(ngModel)]="favoriteSeason">
-        <mat-radio-button class="theme-radio-button"*ngFor="let theme of configService.config.theme.list"
+      <h2>{{ 'theme.title' | translate }}</h2>
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group" [(ngModel)]="themeService._theme">
+        <mat-radio-button class="radio-button"*ngFor="let theme of configService.config.theme.list"
           [value]="theme"
-          (change)="radioChange($event)">
-          {{theme}}
+          (change)="themeService.setTheme($event.value)">
+          {{'theme.'+ theme | translate}}
         </mat-radio-button>
       </mat-radio-group>
+    </div>
 
-      {{ languageService.language$ |async }}
+    <div class="group" fxLayout="column" fxLayoutAlign="space-around center">
+      <h2>Language</h2>
+
+      <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group" [(ngModel)]="languageService._language">
+        <mat-radio-button class="radio-button"*ngFor="let language of configService.config.language.list"
+          [value]="language"
+          (change)="languageService.setLanguage($event.value)">
+          {{language}}
+        </mat-radio-button>
+      </mat-radio-group>
     </div>
 
   </mat-sidenav>
@@ -25,7 +34,7 @@
 
     <mat-toolbar color="primary">
       <!-- top navigation buttons -->
-      <button mat-button (click)="sideNav.toggle()">切換左邊選單狀態</button>
+      <button mat-button (click)="sideNav.toggle()">切換左邊選單狀態 </button>
       <button mat-button (click)="sideNav2.toggle()">切換右邊選單狀態</button>
     </mat-toolbar>
 

@@ -10,11 +10,17 @@ export class LanguageService {
   private languageSubject = new BehaviorSubject(null);
   language$ = this.languageSubject.asObservable();
 
+  get _language () {
+    return this.languageSubject.value;
+  }
+  set _language(value) {
+    this.setLanguage(value);
+  }
+
   constructor(
     private translateService: TranslateService,
     private configService: ConfigService
   ) { }
-
 
   init() {
     this.configService.config$.subscribe(result => {
@@ -25,8 +31,10 @@ export class LanguageService {
         this.translateService.setDefaultLang(language.default);
         this.translateService.use(language.default);
       }
-
     })
   }
 
+  setLanguage(language: string): void {
+    this.translateService.use(language);
+  }
 }

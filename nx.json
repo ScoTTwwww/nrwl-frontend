@@ -49,6 +49,9 @@
     },
     "common-auth-shared": {
       "tags": []
+    },
+    "common-auth-state": {
+      "tags": []
     }
   }
 }
