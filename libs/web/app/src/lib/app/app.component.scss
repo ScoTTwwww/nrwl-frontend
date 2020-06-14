@@ -18,6 +18,7 @@
   border: 1px solid rgba(0,0,0,.12);
   margin: 32px;
   padding: 0 47px;
+  min-width: 200px;
 
   h2 {
     position: absolute;
@@ -27,7 +28,7 @@
     padding: 0 8px;
     font-size: 16px;
     font-weight: 600;
-    background: #fafafa;
-    color: rgba(0,0,0,.54);
+   // background: #fafafa;
+    //color: rgba(0,0,0,.54);
   }
 }
