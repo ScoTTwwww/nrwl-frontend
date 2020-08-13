@@ -4,7 +4,7 @@ import { AppComponent } from './app/app.component';
 import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonSharedModule } from '@frontend/common/shared';
-
+import { IonicModule } from '@ionic/angular';
 const routes: Routes = [
   {
     path: '',
@@ -17,9 +17,11 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    IonicModule,
     CommonSharedModule,
     TranslateModule,
     RouterModule.forChild(routes)
-  ]
+  ],
+  declarations: [AppComponent]
 })
 export class IonicAppModule { }

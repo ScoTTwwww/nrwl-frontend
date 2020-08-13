@@ -16,6 +16,12 @@ const routes: Routes = [
   declarations: [AppComponent],
   imports: [
     BrowserModule,
+    IonicModule.forRoot({
+      mode: 'ios',
+      swipeBackEnabled: false,
+      scrollPadding: false,
+      scrollAssist: false
+    }),
     RouterModule.forRoot(routes, {
       useHash: true
     })
