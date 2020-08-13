@@ -31,23 +31,24 @@
 
 
   <mat-sidenav-content fxLayout="column">
-
-    <mat-toolbar color="primary">
-      <!-- top navigation buttons -->
+  <!--   <mat-toolbar color="primary">
       <button mat-button (click)="sideNav.toggle()">切換左邊選單狀態 </button>
       <button mat-button (click)="sideNav2.toggle()">切換右邊選單狀態</button>
-    </mat-toolbar>
+    </mat-toolbar> -->
 
-    <router-outlet>
-      <!-- content change by changing the route -->
-    </router-outlet>
+    <router-outlet> </router-outlet>
 
-    <footer fxFlexOffset="auto">
+    <div class="settings">
+      <button (click)="sideNav.toggle()">
+        <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
+      </button>
+    </div>
+<!--     <footer fxFlexOffset="auto">
 
       <p>Test footer</p>
 
     </footer>
-
+ -->
   </mat-sidenav-content>
 
 </mat-sidenav-container>

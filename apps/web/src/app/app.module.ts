@@ -11,6 +11,10 @@ import { TranslateHttpLoader } from "@ngx-translate/http-loader";
 
 import { CommonSharedModule } from '@frontend/common/shared';
 import { WebCoreModule } from '@frontend/web/core';
+import { CommonAuthStateModule } from '@frontend/common/auth/state';
+
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
 
 export function createTranslateLoader(http: HttpClient) {
   return new TranslateHttpLoader(http, "./assets/i18n/", ".json");
@@ -29,7 +33,10 @@ const routes: Routes = [
     BrowserModule,
     WebCoreModule,
     CommonSharedModule,
+    CommonAuthStateModule,
     BrowserAnimationsModule,
+
+    StoreDevtoolsModule.instrument(),
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

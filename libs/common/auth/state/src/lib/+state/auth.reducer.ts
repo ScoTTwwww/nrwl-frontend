@@ -11,37 +11,44 @@ export const AUTH_FEATURE_KEY = 'auth';
  */
 
 /* tslint:disable:no-empty-interface */
-export interface Entity {}
 
+export interface User {
+  id?: string;
+  name?: string;
+  token?: string;
+  password?: string;
+}
+export interface AuthData {
+  user: User;
+}
+
+/**
+ * Interface to the part of the Store containing AuthState
+ * and other information related to AuthData.
+ */
 export interface AuthState {
-  list: Entity[]; // list of Auth; analogous to a sql normalized table
-  selectedId?: string | number; // which Auth record has been selected
-  loaded: boolean; // has the Auth list been loaded
-  error?: any; // last none error (if any)
+  readonly auth: AuthData;
 }
 
-export interface AuthPartialState {
-  readonly [AUTH_FEATURE_KEY]: AuthState;
-}
-
-export const initialState: AuthState = {
-  list: [],
-  loaded: false
+export const initialState: AuthData = {
+  user: null
 };
 
 export function authReducer(
-  state: AuthState = initialState,
+  state = initialState,
   action: AuthAction
-): AuthState {
+): AuthData {
   switch (action.type) {
-    case AuthActionTypes.AuthLoaded: {
-      state = {
+    case AuthActionTypes.LoginSuccess:
+      console.log(action)
+      return {
         ...state,
-        list: action.payload,
-        loaded: true
+        user: action.payload
       };
-      break;
-    }
+
+
+    default:
+      return state;
   }
-  return state;
+
 }

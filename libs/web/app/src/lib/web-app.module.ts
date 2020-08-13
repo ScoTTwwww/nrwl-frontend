@@ -4,10 +4,17 @@ import { CommonSharedModule } from '@frontend/common/shared';
 import { AppComponent } from './app/app.component';
 import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
+
 const routes: Routes = [
   {
     path: '',
     component: AppComponent,
+    children: [
+      {
+        path: 'login',
+        loadChildren: () => import('@frontend/web/login').then(m => m.WebLoginModule),
+      }
+    ]
   }
 ]
 
@@ -20,4 +27,4 @@ const routes: Routes = [
   ],
   declarations: [AppComponent]
 })
-export class WebAppModule {}
+export class WebAppModule { }

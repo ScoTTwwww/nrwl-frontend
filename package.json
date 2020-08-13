@@ -55,9 +55,9 @@
     "zone.js": "^0.9.1"
   },
   "devDependencies": {
+    "jest-preset-angular": "7.0.0",
     "@ngrx/store-devtools": "7.2.0",
     "ngrx-store-freeze": "0.2.4",
-    "jest-preset-angular": "7.0.0",
     "@angular/compiler-cli": "^8.0.0",
     "@angular/language-service": "^8.0.0",
     "@angular-devkit/build-angular": "^0.800.0",

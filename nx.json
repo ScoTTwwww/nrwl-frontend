@@ -52,6 +52,9 @@
     },
     "common-auth-state": {
       "tags": []
+    },
+    "web-login": {
+      "tags": []
     }
   }
 }

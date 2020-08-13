@@ -26,7 +26,8 @@
       "@frontend/common/core": ["libs/common/core/src/index.ts"],
       "@frontend/common/material": ["libs/common/material/src/index.ts"],
       "@frontend/common/auth/shared": ["libs/common/auth/shared/src/index.ts"],
-      "@frontend/common/auth/state": ["libs/common/auth/state/src/index.ts"]
+      "@frontend/common/auth/state": ["libs/common/auth/state/src/index.ts"],
+      "@frontend/web/login": ["libs/web/login/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
