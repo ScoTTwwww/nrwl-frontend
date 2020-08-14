@@ -10,8 +10,18 @@ import { environment } from '../environments/environment';
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'login'
+  },
+  {
+    path: 'tabs',
     loadChildren: () => import('@frontend/ionic/app').then(m => m.IonicAppModule),
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('@frontend/ionic/login').then(m => m.IonicLoginModule),
   }
+
 ]
 
 @NgModule({
@@ -32,4 +42,4 @@ const routes: Routes = [
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

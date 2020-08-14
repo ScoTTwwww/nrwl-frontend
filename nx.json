@@ -55,6 +55,12 @@
     },
     "web-login": {
       "tags": []
+    },
+    "ionic-login": {
+      "tags": []
+    },
+    "ionic-home": {
+      "tags": []
     }
   }
 }

@@ -5,14 +5,24 @@ import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonSharedModule } from '@frontend/common/shared';
 import { IonicModule } from '@ionic/angular';
+
 const routes: Routes = [
   {
     path: '',
     component: AppComponent,
-
+    children: [
+      {
+        path: '',
+        pathMatch: 'full',
+        redirectTo: 'home'
+      },
+      {
+        path: 'home',
+        loadChildren: () => import('@frontend/ionic/home').then(m => m.IonicHomeModule)
+      }
+    ]
   }
-]
-
+];
 
 @NgModule({
   imports: [
