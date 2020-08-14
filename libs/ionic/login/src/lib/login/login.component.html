@@ -1,7 +1,7 @@
 <ion-content>
   <div class="logo">
     <div class="img">
-     <!--  <svg version="1.1" id="图层_1" x="0px" y="0px" width="166.652px" height="200px" viewBox="0 0 166.652 200"
+      <!--  <svg version="1.1" id="图层_1" x="0px" y="0px" width="166.652px" height="200px" viewBox="0 0 166.652 200"
         enable-background="new 0 0 166.652 200" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xml="http://www.w3.org/XML/1998/namespace"
         style="transform: rotate(0deg) scale(1, 1); opacity: 1; position: absolute; backface-visibility: hidden; left: 161px; top: 90px; width: 168.67px; height: 120px; overflow: visible;">
@@ -24,32 +24,39 @@
       </svg> -->
     </div>
   </div>
-  {{ formGroup.value | json }}
 
   <form [formGroup]="formGroup" *ngIf="formGroup">
-    <ion-item >
-
-      <ion-label  position="fixed">Email</ion-label>
+    <ion-item>
+      <ion-label position="fixed">Email</ion-label>
       <ion-input type="email" formControlName="userId"></ion-input>
 
     </ion-item>
-    <ng-container *ngIf="(formGroup.controls['userId'].hasError('required')) && (formGroup.controls['userId'].touched)">
-      zzzzzzzzzzzzzzzzzzzzzzzzz
+    <ng-container *ngFor="let formError of formErrors['userId']; let index = index">
+      <div class="errorMessage">
+        <common-form-error-message ngDefaultControl
+          [formControl]="formGroup.controls['userId']"
+          [formError]="formError"
+        ></common-form-error-message>
+      </div>
     </ng-container>
-    <div class="errorMessage">{{ formGroup.controls['userId'].hasError('required') }} {{ formGroup.controls['userId'].touched }}</div>
 
     <ion-item lines="full">
-
-      <ion-label  position="fixed">Password</ion-label>
-      <ion-input type="text" formControlName="password"></ion-input>
+      <ion-label position="fixed">Password</ion-label>
+      <ion-input type="password" formControlName="password"></ion-input>
     </ion-item>
-    <div class="errorMessage">zzz</div>
 
-
+    <ng-container *ngFor="let formError of formErrors['password']; let index = index">
+      <div class="errorMessage">
+        <common-form-error-message ngDefaultControl
+          [formControl]="formGroup.controls['password']"
+          [formError]="formError"
+        ></common-form-error-message>
+      </div>
+    </ng-container>
 
     <ion-row>
       <ion-col>
-        <ion-button [routerLink]="['/tabs/home']" color="danger" expand="block">Send</ion-button>
+        <ion-button (click)="xxx()" color="danger" expand="block" [disabled]="!formGroup.valid">Send</ion-button>
       </ion-col>
     </ion-row>
 

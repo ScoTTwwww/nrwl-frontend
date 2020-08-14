@@ -1,0 +1,19 @@
+<ng-container *ngIf="formControl && formError && formControl.hasError(formError.type) && formControl.touched">
+  <ng-container *ngIf="errorCount(formControl.errors, formError.type)">
+    {{ formError.message }}
+  </ng-container>
+  <!--   <ng-container [ngSwitch]="formError.type">
+    <ng-container *ngSwitchCase="'required'">{{ formError.message }}</ng-container>
+    <ng-container *ngSwitchCase="'length'">
+
+    </ng-container>
+    <ng-container *ngSwitchCase="'password'">
+      {{ formError.message }}
+   </ng-container>
+
+
+  </ng-container> -->
+  <!--
+   11111.{{ formError.type }}
+  2222.{{ formControl?.errors | json }} -->
+</ng-container>

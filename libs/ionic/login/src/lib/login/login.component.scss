@@ -7,8 +7,14 @@ form {
   ion-item {
     --inner-border-width: 0;
     border:1px solid black;
+    margin-bottom: 15px;
   }
 
+  .errorMessage {
+    position: relative;
+    top: -8px;
+    color: #de0000;
+  }
 
   ion-button{
     margin-top: 30px;

@@ -1,6 +1,8 @@
+import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
 import { LoginBaseComponent } from '@frontend/common/shared';
 import { AuthFacade } from '@frontend/common/auth/state';
+import { Router } from '@angular/router';
 
 @Component({
   // tslint:disable-next-line: component-selector
@@ -11,7 +13,7 @@ import { AuthFacade } from '@frontend/common/auth/state';
 export class LoginComponent extends LoginBaseComponent implements OnInit {
 
   constructor(
-
+    private router: Router
   ) {
   super();
   }
@@ -19,4 +21,10 @@ export class LoginComponent extends LoginBaseComponent implements OnInit {
   ngOnInit() {
   }
 
+    xxx(): void {
+    super.login().subscribe(result=> {
+      console.log(result)
+      this.router.navigate(['/tabs/home']);
+    });
+  }
 }
