@@ -24,20 +24,24 @@
       </svg> -->
     </div>
   </div>
+  {{ formGroup.value | json }}
 
-  <form>
+  <form [formGroup]="formGroup" *ngIf="formGroup">
     <ion-item >
 
       <ion-label  position="fixed">Email</ion-label>
-      <ion-input type="email"></ion-input>
+      <ion-input type="email" formControlName="userId"></ion-input>
 
     </ion-item>
-    <div class="errorMessage">user</div>
+    <ng-container *ngIf="(formGroup.controls['userId'].hasError('required')) && (formGroup.controls['userId'].touched)">
+      zzzzzzzzzzzzzzzzzzzzzzzzz
+    </ng-container>
+    <div class="errorMessage">{{ formGroup.controls['userId'].hasError('required') }} {{ formGroup.controls['userId'].touched }}</div>
 
     <ion-item lines="full">
 
       <ion-label  position="fixed">Password</ion-label>
-      <ion-input type="text"></ion-input>
+      <ion-input type="text" formControlName="password"></ion-input>
     </ion-item>
     <div class="errorMessage">zzz</div>
 
