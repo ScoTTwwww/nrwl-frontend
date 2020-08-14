@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>menu</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-menu-toggle auto-hide="false">
+      <ion-item button no-lines>
+        <ion-icon slot="start" name="share"></ion-icon>
+        <ion-label>ssss</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+
+
+    <ion-menu-toggle auto-hide="false">
+      <ion-item button>
+        <ion-icon slot="start" name="share"></ion-icon>
+        <ion-label>zzz</ion-label>
+      </ion-item>
+    </ion-menu-toggle>
+
+
+    <ion-menu-toggle>
+      <ion-item>
+        <ion-icon slot="start" name="globe"></ion-icon>
+        <ion-label>{{themeService._theme}}</ion-label>
+        <ion-select class="theme"  text-translate
+          [(ngModel)]="themeService._theme"
+          [selectedText]="'theme.'+ themeService._theme | translate">
+          <ng-container *ngFor="let theme of configService.config.theme.list">
+            <ion-select-option text-wrap [value]="theme"> {{'theme.'+ theme | translate}}</ion-select-option>
+          </ng-container>
+
+        </ion-select>
+      </ion-item>
+    </ion-menu-toggle>
+
+    <ion-menu-toggle>
+      <ion-item>
+        <ion-icon slot="start" name="globe"></ion-icon>
+        <ion-label>sss</ion-label>
+        <ion-select text-translate [(ngModel)]="languageService._language" (ionChange)="switchLanguage($event)">
+          <ng-container *ngFor="let language of configService.config.language.list">
+            <ion-select-option [value]="language">{{ language }}</ion-select-option>
+          </ng-container>
+
+        </ion-select>
+      </ion-item>
+    </ion-menu-toggle>
+
+  </ion-list>
+</ion-content>

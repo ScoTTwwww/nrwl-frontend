@@ -3,7 +3,7 @@
     <div class="group" fxLayout="column" fxLayoutAlign="space-around center">
       <h2>{{ 'theme.title' | translate }}</h2>
       <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group" [(ngModel)]="themeService._theme">
-        <mat-radio-button class="radio-button"*ngFor="let theme of configService.config.theme.list"
+        <mat-radio-button class="radio-button" *ngFor="let theme of configService.config.theme.list"
           [value]="theme"
           (change)="themeService.setTheme($event.value)">
           {{'theme.'+ theme | translate}}
@@ -15,7 +15,7 @@
       <h2 color="primary">Language</h2>
 
       <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group" [(ngModel)]="languageService._language">
-        <mat-radio-button class="radio-button"*ngFor="let language of configService.config.language.list"
+        <mat-radio-button class="radio-button" *ngFor="let language of configService.config.language.list"
           [value]="language"
           (change)="languageService.setLanguage($event.value)">
           {{language}}

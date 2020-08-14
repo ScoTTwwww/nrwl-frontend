@@ -5,6 +5,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { TranslateModule } from '@ngx-translate/core';
 import { CommonSharedModule } from '@frontend/common/shared';
 import { IonicModule } from '@ionic/angular';
+import { MenuComponent } from './app/menu/menu.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,6 @@ const routes: Routes = [
     TranslateModule,
     RouterModule.forChild(routes)
   ],
-  declarations: [AppComponent]
+  declarations: [AppComponent, MenuComponent]
 })
 export class IonicAppModule { }

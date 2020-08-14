@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { ThemeService } from '@frontend/web/shared';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class ConfigService {
   private _config: any;
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private themeService: ThemeService
   ) { }
 
 
@@ -26,6 +28,7 @@ export class ConfigService {
     this.httpClient.get('assets/config.json').subscribe(config => {
       console.log("--- Loading Finish config ---", config)
       this._config = config;
+      this.themeService.initTheme( this._config.theme.default)
       this.configSubject.next(config);
     })
   }
