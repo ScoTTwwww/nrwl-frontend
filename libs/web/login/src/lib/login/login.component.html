@@ -3,19 +3,36 @@
   <mat-card>
     <mat-card-title>Login</mat-card-title>
 
-    <form class="example-form" fxLayout="column">
+    <form [formGroup]="formGroup" *ngIf="formGroup" class="example-form" fxLayout="column">
       <mat-form-field class="example-full-width">
         <mat-label>帳號</mat-label>
-        <input matInput value="Sushi">
+        <input type="text" matInput formControlName="userId">
+        <mat-error>
+          <ng-container *ngFor="let formError of formErrors['userId']; let index = index">
+            <common-form-error-message ngDefaultControl
+              [formControl]="formGroup.controls['userId']"
+              [formError]="formError"
+            ></common-form-error-message>
+          </ng-container>
+        </mat-error>
       </mat-form-field>
+
 
       <mat-form-field class="example-full-width">
         <mat-label>密碼</mat-label>
-        <input matInput  value="Sushi">
+        <input type="password" matInput formControlName="password">
+        <mat-error>
+          <ng-container *ngFor="let formError of formErrors['password']; let index = index">
+            <common-form-error-message ngDefaultControl
+              [formControl]="formGroup.controls['password']"
+              [formError]="formError"
+            ></common-form-error-message>
+          </ng-container>
+        </mat-error>
       </mat-form-field>
     </form>
 
-    <button mat-raised-button color="primary" (click)="send()">Primary</button>
+    <button mat-raised-button color="primary" [disabled]="!formGroup.valid" (click)="send()">Primary</button>
 
     <span class="admin-title">From ScoTT Admin 1.0</span>
   </mat-card>

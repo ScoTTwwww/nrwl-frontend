@@ -1,21 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthFacade } from '@frontend/common/auth/state';
+import { LoginBaseComponent } from '@frontend/common/shared';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'web-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent extends LoginBaseComponent implements OnInit {
   user$ = this.authFacade.user$;
   constructor(
-   private authFacade: AuthFacade
-  ) { }
+   private authFacade: AuthFacade,
+   private router: Router
+  ) {
+    super();
+   }
 
   ngOnInit() {
   }
 
   send() {
-    this.authFacade.login({ id: "1231", name: "scott" })
+    super.login().subscribe(result=> {
+      console.log(result)
+      this.authFacade.login({ id: "1231", name: "scott" });
+      this.router.navigate(['']);
+    });
   }
 }

@@ -1,0 +1,13 @@
+{
+  "theme": {
+    "title": "Color themes",
+    "theme-1": "skin 1",
+    "theme-2": "skin 2",
+    "theme-3": "skin 3"
+  },
+  "language": {
+    "title": "Language",
+    "zh-TW": "Chinese",
+    "en-US": "English"
+  }
+}

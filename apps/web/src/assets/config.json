@@ -9,10 +9,9 @@
   },
   "language": {
     "list": [
-      "cn",
-      "en",
-      "tw"
+      "en-US",
+      "zh-TW"
     ],
-    "default": "tw"
+    "default": "zh-TW"
   }
 }
