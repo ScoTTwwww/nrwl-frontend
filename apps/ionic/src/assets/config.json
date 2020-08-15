@@ -1,17 +1,16 @@
 {
   "theme": {
     "list": [
-      "theme-1",
-      "theme-2"
+      "light",
+      "dark"
     ],
-    "default": "theme-1"
+    "default": "light"
   },
   "language": {
     "list": [
-      "cn",
-      "en",
-      "tw"
+      "en-US",
+      "zh-TW"
     ],
-    "default": "tw"
+    "default": "zh-TW"
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ThemeService } from '@frontend/web/shared';
+import { ThemeService } from '@frontend/common/shared';
 import { ConfigService, LanguageService } from '@frontend/common/shared';
 
 @Component({

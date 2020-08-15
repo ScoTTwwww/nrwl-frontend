@@ -7,23 +7,17 @@
 
 @include mat-core();
 
-@import './themes/theme-1.theme';
-@import './themes/theme-2.theme';
-@import './themes/theme-3.theme';
+@import './themes/light.theme';
+@import './themes/dark.theme';
 
-.theme-1 {
+.light {
   @include angular-material-theme($anms-light-theme);
   //@include custom-components-theme($anms-light-theme);
 }
 
-.theme-2 {
+.dark {
   @include angular-material-theme($anms-black-theme);
   //@include custom-components-theme($anms-black-theme);
-}
-
-.theme-3 {
-  @include angular-material-theme($anms-theme);
-  //@include custom-components-theme($anms-theme);
 }
 
 

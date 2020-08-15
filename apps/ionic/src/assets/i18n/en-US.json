@@ -1,0 +1,12 @@
+{
+  "theme": {
+    "title": "Color themes",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "language": {
+    "title": "Language",
+    "zh-TW": "Chinese",
+    "en-US": "English"
+  }
+}

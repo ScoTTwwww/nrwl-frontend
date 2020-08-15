@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ConfigService, LanguageService } from '@frontend/common/shared';
-import { ThemeService } from '@frontend/web/shared';
+import { ThemeService } from '@frontend/common/shared';
 import { MatRadioChange } from '@angular/material';
 
 @Component({

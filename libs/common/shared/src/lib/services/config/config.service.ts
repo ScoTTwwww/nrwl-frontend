@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { ThemeService } from '@frontend/web/shared';
+import { ThemeService } from '../theme/theme.service';
 
 @Injectable({
   providedIn: 'root'
