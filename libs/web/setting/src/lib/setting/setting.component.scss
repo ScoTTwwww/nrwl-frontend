@@ -1,0 +1,34 @@
+.radio-group {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+
+  .radio-button {
+    margin: 5px;
+  }
+}
+
+.group {
+  flex: 1 0 auto;
+  flex-direction: column;
+  position: relative;
+  border-radius: 2px;
+  padding: 28px 16px 8px;
+  margin: 16px 0;
+  border: 1px solid rgba(0,0,0,.12);
+  margin: 32px;
+  padding: 0 47px;
+  min-width: 200px;
+
+  h2 {
+    position: absolute;
+    top: -11px;
+    left: 8px;
+    margin: 0;
+    padding: 0 8px;
+    font-size: 16px;
+    font-weight: 600;
+   // background: #fafafa;
+    //color: rgba(0,0,0,.54);
+  }
+}

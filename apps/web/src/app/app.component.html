@@ -1,3 +1,25 @@
 <div  class="{{ themeService.theme$ | async }}" fxLayout="column" fxFlexFill>
-  <router-outlet class="router-flex"></router-outlet>
+
+  <mat-sidenav-container fullscreen  [hasBackdrop]="true" autosize>
+    <mat-sidenav #sideNav mode="over" fixedInViewport="true" fixedTopGap="0" position="end" [autoFocus]="false">
+      <web-setting></web-setting>
+    </mat-sidenav>
+
+    <mat-sidenav-content fxLayout="column">
+      <ng-container *ngIf="loading$ | async">
+        <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+      </ng-container>
+
+      <router-outlet class="router-flex"></router-outlet>
+
+      <div class="settings">
+        <button (click)="sideNav.toggle()">
+          <mat-icon aria-hidden="false">settings</mat-icon>
+        </button>
+      </div>
+    </mat-sidenav-content>
+
+    </mat-sidenav-container>
 </div>
+
+

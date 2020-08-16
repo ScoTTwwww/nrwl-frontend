@@ -1,11 +1,11 @@
 
 <div class="content" fxLayout="column" fxLayoutAlign="space-around center" >
   <mat-card>
-    <mat-card-title>Login</mat-card-title>
+    <mat-card-title>{{ 'login.title' | translate }}</mat-card-title>
 
     <form [formGroup]="formGroup" *ngIf="formGroup" class="example-form" fxLayout="column">
       <mat-form-field class="example-full-width">
-        <mat-label>帳號</mat-label>
+        <mat-label>{{ 'login.userId' | translate }}</mat-label>
         <input type="text" matInput formControlName="userId">
         <mat-error>
           <ng-container *ngFor="let formError of formErrors['userId']; let index = index">
@@ -19,7 +19,7 @@
 
 
       <mat-form-field class="example-full-width">
-        <mat-label>密碼</mat-label>
+        <mat-label>{{ 'login.password' | translate }}</mat-label>
         <input type="password" matInput formControlName="password">
         <mat-error>
           <ng-container *ngFor="let formError of formErrors['password']; let index = index">
@@ -32,7 +32,7 @@
       </mat-form-field>
     </form>
 
-    <button mat-raised-button color="primary" [disabled]="!formGroup.valid" (click)="send()">Primary</button>
+    <button mat-raised-button color="primary" [disabled]="!formGroup.valid" (click)="send()">{{ 'system.confirm' | translate }}</button>
 
     <span class="admin-title">From ScoTT Admin 1.0</span>
   </mat-card>

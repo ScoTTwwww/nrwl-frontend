@@ -9,5 +9,13 @@
     "title": "語系設定",
     "zh-TW": "繁體中文",
     "en-US": "英文"
+  },
+  "login": {
+    "title": "登入",
+    "userId": "帳號",
+    "password": "密碼"
+  },
+  "system": {
+    "confirm": "確認"
   }
 }

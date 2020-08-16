@@ -9,5 +9,13 @@
     "title": "Language",
     "zh-TW": "Chinese",
     "en-US": "English"
+  },
+  "login": {
+    "title": "Login",
+    "userId": "UserID",
+    "password": "Password"
+  },
+  "system": {
+    "confirm": "Confirm"
   }
 }

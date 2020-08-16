@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent extends LoginBaseComponent implements OnInit {
   user$ = this.authFacade.user$;
+
   constructor(
    private authFacade: AuthFacade,
    private router: Router
@@ -23,8 +24,9 @@ export class LoginComponent extends LoginBaseComponent implements OnInit {
   send() {
     super.login().subscribe(result=> {
       console.log(result)
-      this.authFacade.login({ id: "1231", name: "scott" });
+      this.authFacade.login(result.data);
       this.router.navigate(['']);
+      localStorage.setItem('user', "zzzzzz");
     });
   }
 }

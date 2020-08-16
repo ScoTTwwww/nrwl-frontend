@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { Routes, RouterModule } from '@angular/router';
 import { CommonSharedModule } from '@frontend/common/shared';
+import { WebCoreModule } from '@frontend/web/core';
 
 const routes: Routes = [
   {
@@ -15,6 +16,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     CommonModule,
+    WebCoreModule,
     CommonSharedModule,
     RouterModule.forChild(routes)
   ],

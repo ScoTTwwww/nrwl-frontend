@@ -29,7 +29,9 @@
       "@frontend/common/auth/state": ["libs/common/auth/state/src/index.ts"],
       "@frontend/web/login": ["libs/web/login/src/index.ts"],
       "@frontend/ionic/login": ["libs/ionic/login/src/index.ts"],
-      "@frontend/ionic/home": ["libs/ionic/home/src/index.ts"]
+      "@frontend/ionic/home": ["libs/ionic/home/src/index.ts"],
+      "@frontend/web/home": ["libs/web/home/src/index.ts"],
+      "@frontend/web/setting": ["libs/web/setting/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

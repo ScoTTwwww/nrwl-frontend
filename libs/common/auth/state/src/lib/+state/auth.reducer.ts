@@ -13,7 +13,7 @@ export const AUTH_FEATURE_KEY = 'auth';
 /* tslint:disable:no-empty-interface */
 
 export interface User {
-  id?: string;
+  userId?: string;
   name?: string;
   token?: string;
   password?: string;

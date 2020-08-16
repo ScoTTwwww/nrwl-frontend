@@ -6,6 +6,9 @@ import { CommonCoreModule } from '@frontend/common/core';
   imports: [
     CommonModule,
     CommonCoreModule
+  ],
+  exports: [
+    CommonCoreModule
   ]
 })
 export class WebCoreModule {}

@@ -45,13 +45,8 @@ export abstract class LoginBaseComponent extends FormBaseComponent {
 
 
   login(): Observable<any> {
-
     if(this.formGroup.valid){
-      console.log("????", this.formGroup.value)
-
-     return  of({ status: 200})
+     return of({ status: 200 , data: this.formGroup.value})
     }
-
-
   }
 }

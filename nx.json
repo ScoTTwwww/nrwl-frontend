@@ -61,6 +61,12 @@
     },
     "ionic-home": {
       "tags": []
+    },
+    "web-home": {
+      "tags": []
+    },
+    "web-setting": {
+      "tags": []
     }
   }
 }

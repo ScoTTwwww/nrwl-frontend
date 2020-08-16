@@ -1,54 +1,19 @@
-<mat-sidenav-container fullscreen  [hasBackdrop]="true" autosize>
-  <mat-sidenav #sideNav mode="over" fixedInViewport="true" fixedTopGap="0" position="end" [autoFocus]="false">
-    <div class="group" fxLayout="column" fxLayoutAlign="space-around center">
-      <h2>{{ 'theme.title' | translate }}</h2>
-      <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group" [(ngModel)]="themeService._theme">
-        <mat-radio-button class="radio-button" *ngFor="let theme of configService.config.theme.list"
-          [value]="theme"
-          (change)="themeService.setTheme($event.value)">
-          {{'theme.'+ theme | translate }}
-        </mat-radio-button>
-      </mat-radio-group>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="title">ScoTT Admin 1.0</span>
+
+    <div class="menu">
+      <a mat-button>使用者清單</a>
+      <a mat-button>產品清單</a>
+      <a mat-button>產品清單</a>
+      <a mat-button>產品清單</a>
     </div>
 
-    <div class="group" fxLayout="column" fxLayoutAlign="space-around center">
-      <h2 color="primary">{{ 'language.title' | translate }}</h2>
+    <span class="example-spacer"></span>
+      <mat-icon>account_circle</mat-icon>
+    <div class="userId">{{ (user$ | async )?.userId }}</div>
+  </mat-toolbar-row>
+</mat-toolbar>
 
-      <mat-radio-group aria-labelledby="example-radio-group-label" class="radio-group" [(ngModel)]="languageService._language">
-        <mat-radio-button class="radio-button" *ngFor="let language of configService.config.language.list"
-          [value]="language"
-          (change)="languageService.setLanguage($event.value)">
-          {{'language.'+ language | translate }}
-        </mat-radio-button>
-      </mat-radio-group>
-    </div>
+<router-outlet> </router-outlet>
 
-  </mat-sidenav>
-
-  <mat-sidenav #sideNav2 mode="over" fixedInViewport="true" fixedTopGap="0" fixedBottomGap="20" position="start">
-
-  </mat-sidenav>
-
-
-  <mat-sidenav-content fxLayout="column">
-  <!--   <mat-toolbar color="primary">
-      <button mat-button (click)="sideNav.toggle()">切換左邊選單狀態 </button>
-      <button mat-button (click)="sideNav2.toggle()">切換右邊選單狀態</button>
-    </mat-toolbar> -->
-
-    <router-outlet> </router-outlet>
-zzzzzzzzzzzzz
-    <div class="settings">
-      <button (click)="sideNav.toggle()">
-        <mat-icon aria-hidden="false" aria-label="Example home icon">settings</mat-icon>
-      </button>
-    </div>
-<!--     <footer fxFlexOffset="auto">
-
-      <p>Test footer</p>
-
-    </footer>
- -->
-  </mat-sidenav-content>
-
-</mat-sidenav-container>

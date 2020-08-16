@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfigService, LanguageService } from '@frontend/common/shared';
-import { ThemeService } from '@frontend/common/shared';
-import { MatRadioChange } from '@angular/material';
+import { AuthFacade } from '@frontend/common/auth/state';
 
 @Component({
   selector: 'web-app',
@@ -9,16 +7,19 @@ import { MatRadioChange } from '@angular/material';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-
+  user$ = this.authFacade.user$;
 
   constructor(
-    public configService: ConfigService,
-    public themeService: ThemeService,
-    public languageService: LanguageService
+    private authFacade: AuthFacade,
   ) {
+    this.get();
   }
 
   ngOnInit() {
   }
 
+
+  get() {
+     console.log(    localStorage.getItem('user'))
+  }
 }
