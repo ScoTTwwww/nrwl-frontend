@@ -7,6 +7,7 @@
     "start:web": "ng serve web --host 0.0.0.0",
     "start:ionic": "ng serve ionic --host 0.0.0.0",
     "build": "ng build",
+    "build:all": "ng build web & ng build ionic",
     "test": "ng test",
     "lint": "nx lint && ng lint",
     "e2e": "ng e2e",

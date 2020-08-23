@@ -27,6 +27,11 @@ export function createTranslateLoader(http: HttpClient) {
 const routes: Routes = [
   {
     path: '',
+    pathMatch: 'full',
+    redirectTo: 'login'
+  },
+  {
+    path: '',
     loadChildren: () => import('@frontend/web/app').then(m => m.WebAppModule),
   },
   {

@@ -25,8 +25,8 @@ export class LoginComponent extends LoginBaseComponent implements OnInit {
     super.login().subscribe(result=> {
       console.log(result)
       this.authFacade.login(result.data);
-      this.router.navigate(['']);
-      localStorage.setItem('user', "zzzzzz");
+      this.router.navigate(['home']);
+      localStorage.setItem('user', "OK");
     });
   }
 }
