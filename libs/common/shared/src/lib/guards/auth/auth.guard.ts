@@ -16,12 +16,17 @@ export class AuthGuard implements CanActivate, CanLoad {
   }
 
   canLoad(route: Route, segments: UrlSegment[]): Observable<boolean> | Promise<boolean> | boolean {
-    console.log(    localStorage.getItem('user'))
 
-    const token = localStorage.getItem('user');
-    if(false)   this.router.navigate(['']);
+    const token =  localStorage.getItem('token')
+    console.log( 'token',  token)
+    if(token) {
 
-    return token === 'OK';
+      return true;
+    }else {
+      this.router.navigate(['']);
+      return false;
+    }
+
   }
 
 }

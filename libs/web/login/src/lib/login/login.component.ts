@@ -1,7 +1,9 @@
+import { async } from '@angular/core/testing';
 import { Component, OnInit } from '@angular/core';
 import { AuthFacade } from '@frontend/common/auth/state';
 import { LoginBaseComponent } from '@frontend/common/shared';
 import { Router } from '@angular/router';
+import { AuthService } from '@frontend/common/auth/shared';
 
 @Component({
   selector: 'web-login',
@@ -13,6 +15,7 @@ export class LoginComponent extends LoginBaseComponent implements OnInit {
 
   constructor(
    private authFacade: AuthFacade,
+   private authService: AuthService,
    private router: Router
   ) {
     super();
@@ -21,12 +24,21 @@ export class LoginComponent extends LoginBaseComponent implements OnInit {
   ngOnInit() {
   }
 
-  send() {
-    super.login().subscribe(result=> {
-      console.log(result)
-      this.authFacade.login(result.data);
-      this.router.navigate(['home']);
-      localStorage.setItem('user', "OK");
+   send() {
+    super.login().subscribe( async result=> {
+
+     const user = await this.authService.login(result.data).toPromise();
+     console.log('-------',user)
+
+       if(user){
+        this.authFacade.login(result.data);
+        this.router.navigate(['home']);
+        localStorage.setItem('token', user.access_token);
+        console.log(user)
+       }else {
+         alert("ERROR")
+       }
+
     });
   }
 }
