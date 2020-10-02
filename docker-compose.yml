@@ -5,9 +5,9 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: angular:8.0.0
+    image: angular:10.1.4
     container_name: frontend
-    command: npm run start:ionic
+    command: npm run start:web
     restart: always
     environment:
       NODE_ENV: development
