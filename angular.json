@@ -139,9 +139,7 @@
           "options": {
             "browserTarget": "web:build:production",
             "serverTarget": "web:server:production",
-            "routes": [
-              "/"
-            ]
+            "routes": ["/"]
           },
           "configurations": {
             "production": {}
@@ -842,6 +840,37 @@
             "jestConfig": "libs/web/setting/jest.config.js",
             "tsConfig": "libs/web/setting/tsconfig.spec.json",
             "setupFile": "libs/web/setting/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {
+        "@nrwl/angular:component": {
+          "styleext": "scss"
+        }
+      }
+    },
+    "common-user": {
+      "projectType": "library",
+      "root": "libs/common/user",
+      "sourceRoot": "libs/common/user/src",
+      "prefix": "common",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/common/user/tsconfig.lib.json",
+              "libs/common/user/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/common/user/jest.config.js",
+            "tsConfig": "libs/common/user/tsconfig.spec.json",
+            "setupFile": "libs/common/user/src/test-setup.ts"
           }
         }
       },
