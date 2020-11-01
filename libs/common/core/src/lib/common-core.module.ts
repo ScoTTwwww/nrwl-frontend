@@ -1,8 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
+import { ApiInterceptor } from './interceptors/api/api.interceptor';
+
+export const BASE_PROVIDERS: any[] = [
+  {
+    provide: HTTP_INTERCEPTORS,
+    useClass: ApiInterceptor,
+    multi: true
+  }
+];
 
 @NgModule({
   imports: [
@@ -19,4 +28,11 @@ import { TranslateModule } from '@ngx-translate/core';
     TranslateModule
   ]
 })
-export class CommonCoreModule {}
+export class CommonCoreModule {
+  static forRoot() {
+    return {
+      ngModule: CommonCoreModule,
+      providers: [...BASE_PROVIDERS]
+    };
+  }
+}

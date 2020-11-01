@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { CommonSharedModule, AuthGuard } from '@frontend/common/shared';
 import { AppComponent } from './app/app.component';
 import { Routes, RouterModule } from '@angular/router';
+import { CommonMaterialModule } from '@frontend/common/material';
 
 const routes: Routes = [
   {
     path: '',
     component: AppComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: '',
@@ -27,6 +29,7 @@ const routes: Routes = [
   imports: [
     CommonModule,
     CommonSharedModule,
+    CommonMaterialModule,
     RouterModule.forChild(routes)
   ],
   declarations: [AppComponent]

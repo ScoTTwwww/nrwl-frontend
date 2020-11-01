@@ -22,14 +22,14 @@ export class ConfigService {
     private themeService: ThemeService
   ) { }
 
-
-
   loadConfig() {
     this.httpClient.get('assets/config.json').subscribe(config => {
       console.log("--- Loading Finish config ---", config)
       this._config = config;
-      this.themeService.initTheme( this._config.theme.default)
+      // this.themeService.initTheme( this._config.theme.default)
       this.configSubject.next(config);
+    }, err => {
+      console.log(err)
     })
   }
 }

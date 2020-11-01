@@ -34,6 +34,8 @@
 
     <button mat-raised-button color="primary" [disabled]="!formGroup.valid" (click)="send()">{{ 'system.confirm' | translate }}</button>
 
+    <button class="visit" mat-raised-button color="primary" [disabled]="!formGroup.valid" (click)="send(visitUser)">訪客登入</button>
+
     <span class="admin-title">From ScoTT Admin 1.0</span>
   </mat-card>
 

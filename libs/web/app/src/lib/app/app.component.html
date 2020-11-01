@@ -1,5 +1,5 @@
 <mat-toolbar color="primary">
-  <mat-toolbar-row>
+  <mat-toolbar-row no-padding class="container no-padding">
     <span class="title">ScoTT Admin 1.0</span>
 
     <div class="menu">
@@ -9,9 +9,29 @@
       <a mat-button>產品清單</a>
     </div>
 
-    <span class="example-spacer"></span>
-      <mat-icon>account_circle</mat-icon>
-    <div class="userId">{{ (user$ | async )?.userId }}</div>
+
+
+    <div class="userId" fxLayout="row" fxLayoutAlign="end center" >
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon>account_circle</mat-icon>
+        {{ (user$ | async )?.userId }}
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>個人資料</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>設定</span>
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>notifications_off</mat-icon>
+          <span>登出</span>
+        </button>
+      </mat-menu>
+    </div>
+
   </mat-toolbar-row>
 </mat-toolbar>
 

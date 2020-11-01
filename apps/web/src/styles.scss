@@ -31,3 +31,13 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @import './styles/default';
+
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.no-padding {
+  padding: 0 !important;
+}

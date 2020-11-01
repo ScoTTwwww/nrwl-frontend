@@ -5,7 +5,7 @@ import { CommonCoreModule } from '@frontend/common/core';
 @NgModule({
   imports: [
     CommonModule,
-    CommonCoreModule
+    CommonCoreModule.forRoot()
   ],
   exports: [
     CommonCoreModule

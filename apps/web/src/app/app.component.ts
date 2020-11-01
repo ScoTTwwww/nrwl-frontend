@@ -32,9 +32,9 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.themeService.setTheme("theme-3");
+    //this.themeService.setTheme("theme-3");
     this.configService.loadConfig();
-    this.languageService.init();
+   this.languageService.init();
   }
 
 

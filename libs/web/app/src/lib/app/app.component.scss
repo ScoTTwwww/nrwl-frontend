@@ -17,10 +17,16 @@ mat-toolbar {
   }
 }
 
-.example-spacer {
+/* .example-spacer {
   flex: 1 1 auto;
-}
+} */
 
 .userId {
   margin-left: 8px;
+  flex: 1 1 0%;
+  min-width: 100px;
+
+  button {
+    width: auto;
+  }
 }

@@ -13,6 +13,7 @@ export const AUTH_FEATURE_KEY = 'auth';
 /* tslint:disable:no-empty-interface */
 
 export interface User {
+  id?: string;
   userId?: string;
   name?: string;
   token?: string;
@@ -40,12 +41,24 @@ export function authReducer(
 ): AuthData {
   switch (action.type) {
     case AuthActionTypes.LoginSuccess:
-      console.log(action)
       return {
         ...state,
         user: action.payload
+      }
+    case AuthActionTypes.LoginFail:
+
+      return {
+        ...state,
+        user: null
       };
 
+
+      case AuthActionTypes.Logout: {
+        return {
+          ...state,
+          user: null
+        };
+      }
 
     default:
       return state;

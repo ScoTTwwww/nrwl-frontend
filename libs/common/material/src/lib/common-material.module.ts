@@ -21,7 +21,8 @@ import {
   MatTableModule,
   MatPaginatorModule,
   MatCardModule,
-  MatProgressBarModule
+  MatProgressBarModule,
+  MatMenuModule
 } from '@angular/material';
 
 @NgModule({
@@ -44,7 +45,8 @@ import {
     MatPaginatorModule,
     MatCardModule,
     FlexLayoutModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatMenuModule
   ],
   providers: [
     MatDatepickerModule,

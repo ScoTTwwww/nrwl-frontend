@@ -6,11 +6,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class AuthService {
-  loginUrl = 'http://localhost:3000/api/auth/login';
+  xxx = false;
+  api = 'http://localhost:3000';
+
+  loginUrl = this.xxx ? `${this.api}/api/auth/login`: '/api/auth/login';
   constructor(private http: HttpClient) { }
 
   login(user: any): Observable<any> {
     return this.http.post(this.loginUrl, user)
-
   }
+
 }

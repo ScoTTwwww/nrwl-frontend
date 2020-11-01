@@ -97,6 +97,55 @@
             "tsConfig": "apps/web/tsconfig.spec.json",
             "setupFile": "apps/web/src/test-setup.ts"
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/web-server",
+            "main": "apps/web/server.ts",
+            "tsConfig": "apps/web/tsconfig.server.json"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/web/src/environments/environment.ts",
+                  "with": "apps/web/src/environments/environment.prod.ts"
+                }
+              ],
+              "sourceMap": false,
+              "optimization": {
+                "scripts": false,
+                "styles": true
+              }
+            }
+          }
+        },
+        "serve-ssr": {
+          "builder": "@nguniversal/builders:ssr-dev-server",
+          "options": {
+            "browserTarget": "web:build",
+            "serverTarget": "web:server"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "web:build:production",
+              "serverTarget": "web:server:production"
+            }
+          }
+        },
+        "prerender": {
+          "builder": "@nguniversal/builders:prerender",
+          "options": {
+            "browserTarget": "web:build:production",
+            "serverTarget": "web:server:production",
+            "routes": [
+              "/"
+            ]
+          },
+          "configurations": {
+            "production": {}
+          }
         }
       }
     },
