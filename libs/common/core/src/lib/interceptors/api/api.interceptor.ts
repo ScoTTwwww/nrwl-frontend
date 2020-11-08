@@ -18,9 +18,10 @@ export class ApiInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     if (req.url.indexOf('api/') !== -1) {
+      console.log(location.origin)
       const url: string = this.configService.config.api || location.origin;
 
-      req = req.clone({ url: `${url}/${req.url}` });
+      req = req.clone({ url: `${url}${req.url}` });
     }
 
     return next.handle(req);

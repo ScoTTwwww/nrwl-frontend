@@ -70,6 +70,9 @@
     },
     "common-user": {
       "tags": []
+    },
+    "web-user": {
+      "tags": []
     }
   }
 }

@@ -14,11 +14,16 @@ const routes: Routes = [
       {
         path: '',
         pathMatch: 'full',
-        redirectTo: 'home'
+        redirectTo: 'user'
       },
       {
         path: 'home',
         loadChildren: () => import('@frontend/web/home').then(m => m.WebHomeModule),
+        canLoad: [AuthGuard]
+      },
+      {
+        path: 'user',
+        loadChildren: () => import('@frontend/web/user').then(m => m.WebUserModule),
         canLoad: [AuthGuard]
       }
     ]

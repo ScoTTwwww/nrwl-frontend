@@ -14,5 +14,6 @@
     ],
     "default": "zh-TW"
   },
-  "api": "https://backend-dot-my-project-nrwl.df.r.appspot.com/"
+  "api": "http://localhost:3000",
+  "api-default": "https://backend-dot-my-project-nrwl.df.r.appspot.com"
 }
